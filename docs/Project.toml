@@ -1,0 +1,6 @@
+[deps]
+DatashieldInterface = "97ecbe9d-ccd7-46ec-8a3c-959e18e35e3b"
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+
+[sources]
+DatashieldInterface = {path = "/DatashieldInternal.jl"}
