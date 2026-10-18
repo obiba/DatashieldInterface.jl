@@ -14,7 +14,12 @@ makedocs(;
         assets=String[],
     ),
     warnonly=[:missing_docs],
-    pages=["Home" => "index.md", "API Reference" => "api.md"],
+    pages=[
+        "Home" => "index.md",
+        "Contributing" => "90-contributing.md",
+        "Developer Docs" => "91-developer.md",
+        "API Reference" => "api.md",
+    ],
 )
 
 deploydocs(; repo="github.com/obiba/DatashieldInterface.jl", devbranch="main")
