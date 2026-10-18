@@ -343,7 +343,7 @@ function get_driver(name::AbstractString)
     if haskey(_DRIVERS, string(name))
         return _DRIVERS[string(name)]
     end
-    throw(
+    return throw(
         ArgumentError(
             "Driver \"$name\" is not registered. Use register_driver! to register a driver constructor.",
         ),

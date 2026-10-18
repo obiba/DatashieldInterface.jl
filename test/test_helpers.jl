@@ -63,7 +63,7 @@ function dsConnect(
     opts=Dict(),
     profile=nothing,
 )
-    MockConnection(name, String[])
+    return MockConnection(name, String[])
 end
 
 dsHasTable(::MockConnection, table) = true
@@ -73,7 +73,7 @@ dsListTables(::MockConnection) = ["CNSIM.CNSIM1"]
 dsListResources(::MockConnection) = ["RSRC.CNSIM1"]
 
 function dsIsAsync(::MockConnection)
-    Dict(
+    return Dict(
         "session" => true,
         "aggregate" => true,
         "assignTable" => true,
@@ -113,7 +113,7 @@ end
 dsListPackages(::MockConnection) = DataFrame()
 
 function dsListWorkspaces(::MockConnection)
-    DataFrame(;
+    return DataFrame(;
         name=["ws1"],
         user=["dsuser"],
         context=["R"],
@@ -152,7 +152,7 @@ function dsAssignExpr(conn::MockConnection, symbol, expr; async::Bool=true)
 end
 
 function dsAggregate(conn::MockConnection, expr; async::Bool=true)
-    MockResult(conn, "aggregate-result")
+    return MockResult(conn, "aggregate-result")
 end
 dsIsCompleted(::MockResult) = true
 dsFetch(res::MockResult) = res.value
